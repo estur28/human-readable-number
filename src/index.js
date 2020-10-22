@@ -31,10 +31,12 @@ function hundredNum(num) {
     num = num.toString().split('');
     if(num[1] == 0 && num[2] == 0) {
         return items[num[0]] + ' hundred';
-     } else if(num[1] == 0 && num[2] != 0) {
-        return items[num[0]] + ' hundred' + items[num[2]];
-    // } else if (num[1] !== 0 && num[2] === 0) {
-    //     return items[num[0]] +  ' hundred' + doubleItems[num[1]] + items[num[2]];
+     } else if(num[1] == 0 && num[2] != 0 ) {
+        return items[num[0]] + ' hundred ' + items[num[2]];
+     } else if (num[1] != 0 && num[2] == 0) {
+         return items[num[0]] +  ' hundred ' + doubleItems[num[1]];
+     }else {
+       return items[num[0]] +  ' hundred ' + doubleItems[num[1]] + ' ' + items[num[2]];
      }
 };
 
